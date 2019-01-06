@@ -21,11 +21,11 @@ https://stackoverflow.com/questions/39281806/python-opening-multiple-tabs-using-
 '''
 calijobslink = "https://www.linkedin.com/jobs/search/?alertAction=viewjobs&keywords=Software%20Developer&location=95112%20San%20Jose%2C%20CA&locationId=POSTAL.us.95112"#Action link for sanjose alerts
 usualjobslink = "https://www.linkedin.com/jobs"
-username = "" # your email here
-password = "" # your password here
-jobTitle = "Software Engineer -senior -Senior" # your desired job title
+username = "lam.uong2@mail.mcgill.ca" # your email here
+password = "Bachbeo95" # your password here
+jobTitle = "Software Engineer -junior -Junior" # your desired job title
 jobLocation = "Austin, Texas" # your desired job location
-resumeLocation = "" # your resume location on local machine
+resumeLocation = "/Users/nfclaptop13/Desktop/project/resume.pdf" # your resume location on local machine
 
 currentPageJobsList = []
 allEasyApplyJobsList=[]
@@ -63,13 +63,13 @@ def searchJobs(driver):
     driver.get(usualjobslink)
     time.sleep(5)
     a=[]
-	
+    
     a = driver.find_elements_by_class_name("ember-view")
     for i in a:
         print (i.get_attribute("id"))
-    jobDescField = a[29]
+    jobDescField = driver.find_element_by_xpath("//input[@placeholder='Search jobs']")[0]
     print(jobDescField.get_attribute("id"))
-    locField = a[30]
+    locField = driver.find_element_by_xpath("//input[@placeholder='Search location']")[0]
     print(jobDescField.get_attribute("id"))
     search_button = driver.find_element_by_class_name("jobs-search-box__submit-button")
     ac = ActionChains(driver)
@@ -79,10 +79,7 @@ def searchJobs(driver):
     ac.move_to_element(locField).move_by_offset(10,10).click().perform()
     time.sleep(1)
     keyboard.write(jobLocation)
-	#jobDescField.send_keys(jobTitle)
-    #jobDescField.send_keys(Keys.TAB)
     time.sleep(1)
-    #locField.send_keys(jobLocation)
     time.sleep(1)
     search_button.click()
     time.sleep(2)   
@@ -202,7 +199,7 @@ def convertJobElement(i):
         soup = BeautifulSoup(html, "html.parser")
         #title = soup.find("h3", {"class" : "job-card__title"}).getText().strip()
         title = ""
-		#print("Job Title:" + title)
+        #print("Job Title:" + title)
         #company = soup.find("h4", {"class" : "job-card__company-name"}).getText().strip()
         company = ""
         #print("Company:" + company)
