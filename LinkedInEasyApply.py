@@ -21,8 +21,8 @@ https://stackoverflow.com/questions/39281806/python-opening-multiple-tabs-using-
 '''
 calijobslink = "https://www.linkedin.com/jobs/search/?alertAction=viewjobs&keywords=Software%20Developer&location=95112%20San%20Jose%2C%20CA&locationId=POSTAL.us.95112"#Action link for sanjose alerts
 usualjobslink = "https://www.linkedin.com/jobs"
-username = "lam.uong2@mail.mcgill.ca" # your email here
-password = "Bachbeo95" # your password here
+username = "" # your email here
+password = "" # your password here
 jobTitle = "Software Engineer -junior -Junior" # your desired job title
 jobLocation = "Austin, Texas" # your desired job location
 resumeLocation = "/Users/nfclaptop13/Desktop/project/resume.pdf" # your resume location on local machine
