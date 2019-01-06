@@ -21,8 +21,8 @@ https://stackoverflow.com/questions/39281806/python-opening-multiple-tabs-using-
 '''
 calijobslink = "https://www.linkedin.com/jobs/search/?alertAction=viewjobs&keywords=Software%20Developer&location=95112%20San%20Jose%2C%20CA&locationId=POSTAL.us.95112"#Action link for sanjose alerts
 usualjobslink = "https://www.linkedin.com/jobs"
-username = "" # your email here
-password = "" # your password here
+username = "lam.uong2@mail.mcgill.ca" # your email here
+password = "Bachbeo95" # your password here
 jobTitle = "Software Engineer -junior -Junior" # your desired job title
 jobLocation = "Austin, Texas" # your desired job location
 resumeLocation = "/Users/nfclaptop13/Desktop/project/resume.pdf" # your resume location on local machine
@@ -67,9 +67,9 @@ def searchJobs(driver):
     a = driver.find_elements_by_class_name("ember-view")
     for i in a:
         print (i.get_attribute("id"))
-    jobDescField = driver.find_element_by_xpath("//input[@placeholder='Search jobs']")[0]
+    jobDescField = driver.find_element_by_xpath("//input[@placeholder='Search jobs']")
     print(jobDescField.get_attribute("id"))
-    locField = driver.find_element_by_xpath("//input[@placeholder='Search location']")[0]
+    locField = driver.find_element_by_xpath("//input[@placeholder='Search location']")
     print(jobDescField.get_attribute("id"))
     search_button = driver.find_element_by_class_name("jobs-search-box__submit-button")
     ac = ActionChains(driver)
